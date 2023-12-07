@@ -91,7 +91,6 @@ def encrypt(key, plaintext):
     data = fk(keyGen(key)[0], ip(plaintext))
     return fp(fk(keyGen(key)[1], swapNibbles(data)))
 
-
 def decrypt(key, ciphertext):
     """Déchiffre le texte chiffré avec la clé donnée"""
     data = fk(keyGen(key)[1], ip(ciphertext))
