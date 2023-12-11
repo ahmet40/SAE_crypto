@@ -31,10 +31,10 @@ class TestCassageFunctions(unittest.TestCase):
             lignes = texte_clair.splitlines()[2:]
             texte_clair_modifie = '\n'.join(lignes)
 
-        texte_chiffre = double_encod(texte_clair_modifie, 255,255)
+        texte_chiffre = double_encod(texte_clair_modifie, 255,250)
         les_cles=cassage_astucieux(texte_clair_modifie,texte_chiffre)
         print(les_cles)
-        self.assertEqual(les_cles, (255,255))
+        self.assertEqual(les_cles, (255,250))
 
 
 if __name__ == '__main__':
