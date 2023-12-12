@@ -33,19 +33,46 @@ def cassage_astucieux(message_clair:str,message_chiffre:list) -> tuple:
             return:
                 couple (tuple) : la clé 1 et la clé 2 
     """
-    cle1=[]
-    cle2=[]
-    c1=-1
-    c2=-1
+    cle1=dict()
+    
+    message_coupe_claire= message_clair[:10]
+    message_coupe_chiffre= message_chiffre[:10]
+
     for k1 in range(MAX_BYTE_SDES):
-        cle1.append(encod_text(message_clair,k1))
-        cle2.append(decod_text(message_chiffre,k1))
-    intersection = list(filter(lambda x: x in cle1, cle2))
-    for i in range(len(cle1)):
-        if cle1[i] == intersection[0]:
-            c1=i
-        if cle2[i] == intersection[0]:
-            c2=i
-    if c1!=-1 and c2!=-1:
-        return (c1,c2)
+        cle1[tuple(encod_text(message_coupe_claire,k1))]=k1
+    for k2 in range(MAX_BYTE_SDES):
+        m_c=tuple(decod_text(message_coupe_chiffre,k2))
+        if m_c in cle1:
+            return (cle1[m_c],k2)
+
     return "cassage impossible"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

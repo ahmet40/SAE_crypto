@@ -4,7 +4,7 @@ import os
 
 ROOT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'../')
 sys.path.append(os.path.join(ROOT,'code/'))
-from Aes import generate_aes_key, aes_decrypt, aes_encrypt
+from Aes_cipher import generate_aes_key, aes_decrypt, aes_encrypt
 
 class TestAES(unittest.TestCase):
 
