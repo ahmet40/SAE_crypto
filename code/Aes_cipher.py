@@ -1,6 +1,7 @@
-from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
+from Crypto.Cipher import AES
+import binascii
 
 
 def generate_aes_key():
@@ -22,5 +23,6 @@ def aes_decrypt(ciphertext, key, iv):
         Decrypts the given ciphertext using the given key and iv.
     """
     cipher = AES.new(key, AES.MODE_CBC, iv)
-    decrypted_message = unpad(cipher.decrypt(ciphertext), AES.block_size)
-    return decrypted_message.decode('utf-8')
+    decrypted_bytes = cipher.decrypt(ciphertext)
+    decrypted_message = unpad(decrypted_bytes, AES.block_size)
+    return decrypted_message.decode('utf-8',errors="replace")
