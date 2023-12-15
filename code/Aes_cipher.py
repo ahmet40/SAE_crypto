@@ -1,7 +1,6 @@
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Cipher import AES
-import binascii
 
 
 def generate_aes_key():

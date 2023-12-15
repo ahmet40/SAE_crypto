@@ -14,8 +14,8 @@ def ouvrir_fichier(fichier:str):
     for ligne in trace:
         if "UDP" in ligne:          #les message passent par l'UDP c'est donc ce qu'on veut
             iv=ligne[Raw].load[:16] #c'est ce qui nous permet de savoir l'iv
-            print(len(ligne[Raw].load))
-            ligne_udp.append((iv,ligne[Raw].load))
+            la_ligne=ligne[Raw].load
+            ligne_udp.append((iv,la_ligne[16:]))
     return ligne_udp
 
 def decrypt_ligne_udp(ligne_udp:list,key:int):
