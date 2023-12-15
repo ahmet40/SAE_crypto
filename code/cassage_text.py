@@ -32,10 +32,10 @@ def cassage_astucieux(message_clair: str, message_chiffre: list) -> tuple:
     Returns:
         couple (tuple): la clé 1 et la clé 2.
     """
-    cle1 = dict()
-
-    message_coupe_claire = message_clair[:10]
-    message_coupe_chiffre = message_chiffre[:10]
+    cle1=dict()
+    
+    message_coupe_claire= message_clair[:10]
+    message_coupe_chiffre= message_chiffre[:10]
 
     for k1 in range(MAX_BYTE_SDES):
         cle1[tuple(encod_text(message_coupe_claire, k1))] = k1
