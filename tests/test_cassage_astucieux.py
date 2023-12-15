@@ -5,7 +5,7 @@ import os
 ROOT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'../')
 sys.path.append(os.path.join(ROOT,'code/'))
 from SDES import encod_text,double_encod
-from cassage_text import cassage_astucieux,cassage_brutale
+from cassage_text import cassage_astucieux
 
 ROOT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'../')
 sys.path.append(os.path.join(ROOT,'doc/'))
