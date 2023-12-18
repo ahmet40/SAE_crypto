@@ -18,9 +18,8 @@ def cassage_brutale(message_clair: str, message_chiffre: list) -> tuple:
             if double_encod(message_clair, k1, k2) == message_chiffre:
                 cle1 = k1
                 cle2 = k2
-                print(f"La valeur de la clé 1 est : {cle1} et celle de la clé 2 : {cle2}")
                 return (cle1, cle2)
-    return "Les clés n'ont pas été trouvées !!"
+    return None
 
 def cassage_astucieux(message_clair: str, message_chiffre: list) -> tuple:
     """
@@ -44,4 +43,4 @@ def cassage_astucieux(message_clair: str, message_chiffre: list) -> tuple:
         if m_c in cle1:
             return (cle1[m_c], k2)
 
-    return "Cassage impossible"
+    return None
