@@ -92,7 +92,7 @@ while True:
             key_256_bytes = key_256.to_bytes(32, byteorder='big')
             # Utiliser key_256_bytes comme clé pour le déchiffrement
             script_directory = os.path.dirname(os.path.abspath(__file__))
-            print(script_directory,"hahah")
+            print(f"Voici la clé de céchiffrement : {key_256_bytes} en bytes.")
             file_path = os.path.join(script_directory+"/../doc", "trace_sae.cap")
             decrypted_messages=decrypt_ligne_udp(ouvrir_fichier(file_path), key_256_bytes)
             if decrypted_messages:
