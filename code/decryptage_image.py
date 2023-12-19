@@ -16,12 +16,3 @@ def get_rgb_at_position(image):
     
     return cle_chiffrement
 
-ROOT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'../')
-sys.path.append(os.path.join(ROOT,'doc/'))
-image = os.path.join(ROOT, 'doc/rossignol2.bmp')
-image2 = os.path.join(ROOT, 'doc/rossignol1.bmp')
-
-
-print(get_rgb_at_position(Image.open(image))[:64])
-print()
-print(get_rgb_at_position(Image.open(image2))[:64])
