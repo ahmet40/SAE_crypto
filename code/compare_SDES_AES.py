@@ -1,6 +1,11 @@
 import os
 import sys
-from Crypto.Random import get_random_bytes
+try:
+    from Crypto.Random import get_random_bytes
+except ImportError:
+    print("Le module Crypto n'est pas installé.")
+    sys.exit(1)
+
 from Aes_cipher import aes_decrypt, aes_encrypt
 from SDES import encod_text, decod_text2
 import time
