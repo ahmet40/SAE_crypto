@@ -26,3 +26,14 @@ def decod_text(text, cle)-> list:
         else:
             liste_cod.append(decrypt(cle, elem))
     return liste_cod
+
+def decod_text2(text, cle)-> str:
+    """ Cette fonction va decoder un texte avec le chiffrement SDES """
+    liste_cod = ""
+    for elem in text:
+        if type(elem)==str:
+            bloc_8_bits = ord(elem)
+            liste_cod+=chr(decrypt(cle, bloc_8_bits))
+        else:
+            liste_cod+=chr(decrypt(cle, elem))
+    return liste_cod

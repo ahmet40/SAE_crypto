@@ -23,12 +23,20 @@ en générant une clé, chiffrant un message et le déchiffrant.
 
 - Le fichier 'test_SDES.py' : permet de tester les fonctions encod_text, double_encod sur des textes simple.
 
+## Comparaison
+
+Nous avons également développé des programmes affichant des graphiques avec deux courbes afin de comparer l'efficacité en temps.
+
+- Le fichier 'compare_brutale_atucieux' : Le programme génère des textes chiffrés de tailles croissantes, mesure le temps nécessaire pour casser le chiffrement à l'aide des méthodes brutale et astucieux, puis affiche les résultats sur un graphique pour comparer l'efficacité en fonction de la taille du texte.
+
+- Le fichier 'compare_SDES_AES' :  Ce programme évalue les performances d'encryptage et de décryptage pour SDES et AES en utilisant des messages de tailles variables, mesurant les temps d'exécution et affichant les résultats sous forme de graphique pour comparer l'efficacité des deux algorithmes en fonction de la taille du message.
+
 # Réponse
 
 Pour lire les réponse aux questions vous pouvez les lires dans le fichier REONSE.md qui est à la racine du projet.
 
 # Répartition des tâches
 
-- MARIDAT : encod_texte,double_encod,code cassage brutale, déchiffrement des bits images rossignoles, réponse au question de la partie 2,réalisations de tests
+- MARIDAT : encod_texte,double_encod,code cassage brutale, déchiffrement des bits images rossignoles, réponse au question de la partie 2,réalisations de tests, les fichiers de comparaison
 
 - BABA : decode_texte,code cassage astucieux, lire la trâce résaux, réponse aux questions de la partie 4,réalisations de tests, réalisation des fichier main.py, lancement.sh,requirements.txt
