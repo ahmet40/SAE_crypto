@@ -39,4 +39,4 @@ Pour lire les réponse aux questions vous pouvez les lires dans le fichier REONS
 
 - MARIDAT : encod_texte,double_encod,code cassage brutale, déchiffrement des bits images rossignoles, réponse au question de la partie 2,réalisations de tests, les fichiers de comparaison
 
-- BABA : decode_texte,code cassage astucieux, lire la trâce résaux, réponse aux questions de la partie 4,réalisations de tests, réalisation des fichier main.py, lancement.sh,requirements.txt
+- BABA : decode_texte,code cassage astucieux, lire la trâce résaux, réponse aux questions de la partie 4 et de la partie 1,réalisations de tests, réalisation des fichier main.py, lancement.sh,requirements.txt
