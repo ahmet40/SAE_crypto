@@ -33,10 +33,14 @@ Nous avons également développé des programmes affichant des graphiques avec d
 
 # Réponse
 
-Pour lire les réponse aux questions vous pouvez les lires dans le fichier REONSE.md qui est à la racine du projet.
+Pour lire les réponse aux questions vous pouvez les lires dans le fichier REPONSE.md qui est à la racine du projet.
 
 # Répartition des tâches
 
 - MARIDAT : encod_texte,double_encod,code cassage brutale, déchiffrement des bits images rossignoles, réponse au question de la partie 2,réalisations de tests, les fichiers de comparaison
 
 - BABA : decode_texte,code cassage astucieux, lire la trâce résaux, réponse aux questions de la partie 4 et de la partie 1,réalisations de tests, réalisation des fichier main.py, lancement.sh,requirements.txt
+
+# Lien git
+
+https://github.com/ahmet40/SAE_crypto.git

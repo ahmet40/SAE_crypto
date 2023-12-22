@@ -13,7 +13,8 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')
 sys.path.append(os.path.join(ROOT, 'doc/'))
 
 while True:
-    print("\033[92m================================\033[0m")
+    # Affiche le menu principal avec les options
+    print("\033[92m================================\033[0m")    #permet d'avoir des couleurs.
     print("    1 : tester le cassage astucieux avec 2 clé aléatoire")
     print("    2 : tester le cassage brutale \033[91mCela prend du temps !\033[0m")
     print("    3 : trouver et afficher la clé des images rossignol")
@@ -23,26 +24,28 @@ while True:
     print("\033[92m================================\033[0m")
     liste_possibilite = ["1", "2", "3", "4", "5","6"]
     valeur = input("veuillez-choisir une action : ")
-    if valeur in liste_possibilite:
+    if valeur in liste_possibilite: # Si l'utilisateur entre une valeur valide
+        # On va tester les différentes options et afficher les résultats en conséquence
         if valeur == "1":
             print("le message est le contenu du fichier arsene_lupin_extrait.txt")
             fichier_texte = os.path.join(ROOT, 'doc/arsene_lupin_extrait.txt')
 
-            with open(fichier_texte, 'r', encoding='utf-8') as file:
+            with open(fichier_texte, 'r', encoding='utf-8') as file:    # On ouvre le fichier texte arsene lupin
                 texte_clair = file.read()
                 lignes = texte_clair.splitlines()[2:]
                 texte_clair_modifie = '\n'.join(lignes)
-            cle1, cle2 = random.randint(1, 255), random.randint(1, 255)
-            
+            cle1, cle2 = random.randint(1, 255), random.randint(1, 255) # On génère deux clés aléatoires entre 1 et 255
+            # Chiffre le texte en utilisant double_encod
             texte_chiffre = double_encod(texte_clair_modifie, cle1, cle2)
             print(f"voici la valeur des de cle: {cle1},{cle2}")
-            start_time = time.time()
+            start_time = time.time()    # On commence le timer 
             les_cles = cassage_astucieux(texte_clair_modifie, texte_chiffre)
             if les_cles:
-                end_time = time.time()
+                end_time = time.time()  # On mesure le temps que cela a pris
                 elapsed_time = end_time - start_time
                 formatted_time = str(datetime.utcfromtimestamp(elapsed_time).strftime('%H:%M:%S.%f')[:-3])
                 print(formatted_time, f"temps après cassage et voici les clés, cle1={les_cles[0]} , cle2={les_cles[1]}")
+                # On affiche les clés trouvées et le temps que cela a pris
         
         elif valeur =="2":
             print("le message est le contenu du fichier arsene_lupin_extrait.txt")
@@ -70,7 +73,7 @@ while True:
             sys.path.append(os.path.join(ROOT,'doc/'))
             image = os.path.join(ROOT, 'doc/rossignol1.bmp')
             image2 = os.path.join(ROOT, 'doc/rossignol2.bmp')
-            print("\033[91mCette action peut prendre quelques secondes !!\033[0m")
+            print("\033[91mCette action peut prendre quelques secondes !!\033[0m")  
             
             print("\033[91m===========\033[0m")  
             print("\033[93mVoici un extrait de 256 bits de l'image rosignol 1 : \033[0m", get_rgb_at_position(Image.open(image))[:256])

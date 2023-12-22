@@ -22,28 +22,28 @@ temps_astucieux = []
 tailles_messages = []
 
 for i in range(10, 60, 10):
-    # Chiffrer le texte en utilisant double_encod
+    # Chiffre le texte en utilisant double_encod
     texte_chiffre = double_encod(texte_clair_modifie[:i], 10, 10)
 
-    # Effectuer le cassage brutale et mesurer le temps
+    # Effectue le cassage brutale et mesurer le temps
     start_time = time.time()
     result_brutale = cassage_brutale(texte_clair_modifie[:i], texte_chiffre)
     end_time = time.time()
     temps_brutale.append(end_time - start_time)
     
-    # Effectuer le cassage astucieux et mesurer le temps
+    # Effectue le cassage astucieux et mesurer le temps
     start_time = time.time()
     result_astucieux = cassage_astucieux(texte_clair_modifie[:i], texte_chiffre)
     end_time = time.time()
     temps_astucieux.append(end_time - start_time)
     
-    # Ajouter la taille du message à la liste
+    # Ajoute la taille du message à la liste
     tailles_messages.append(i)
 
     # Assertion d'exemple du cas de test
     assert result_brutale == (10, 10)
 
-# Tracer les résultats
+# Trace les résultats
 plt.plot(tailles_messages, temps_brutale, label='Cassage Brutale')
 plt.plot(tailles_messages, temps_astucieux, label='Cassage Astucieux')
 plt.xlabel('Taille du Message')
